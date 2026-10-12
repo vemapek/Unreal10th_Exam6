@@ -66,6 +66,10 @@ void AExamPlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		{
 			Enhanced->BindAction(LookAction, ETriggerEvent::Triggered, this, &AExamPlayerCharacter::Look);
 		}
+		if (MouseLookAction)
+		{
+			Enhanced->BindAction(MouseLookAction, ETriggerEvent::Triggered, this, &AExamPlayerCharacter::Look);
+		}
 		if (JumpAction)
 		{
 			Enhanced->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
